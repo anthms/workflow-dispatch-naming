@@ -14,4 +14,4 @@ jobs:
           route: GET /repos/${{ github.repository }}/actions/workflows
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: "echo latest release: ${{ steps.get_wfs.outputs.data }}"
+      - run: echo "${{ steps.get_wfs.outputs.data }}"
