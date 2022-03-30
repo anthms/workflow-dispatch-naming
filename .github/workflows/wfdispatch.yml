@@ -1,6 +1,6 @@
-name: Patch
+name: Patch Push
 
-on: [workflow_dispatch]
+on: [workflow_dispatch, push]
 
 jobs:
   task:
