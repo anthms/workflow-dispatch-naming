@@ -8,8 +8,10 @@ jobs:
     
     steps:
       - name: List Repo Workflows
+        id: get_wfs
         uses: octokit/request-action@v2.x
         with:
           route: GET /repos/${{ github.repository }}/actions/workflows
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: "echo latest release: ${{ steps.get_wfs.outputs.data }}"
