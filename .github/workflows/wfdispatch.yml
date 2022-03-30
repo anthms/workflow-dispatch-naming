@@ -4,6 +4,7 @@ on: [workflow_dispatch, push]
 
 jobs:
   task:
+    if: always() && false 
     runs-on: ubuntu-latest
     
     steps:
