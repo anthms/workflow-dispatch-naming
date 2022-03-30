@@ -1,0 +1,15 @@
+name: Main
+
+on: [workflow-dispatch]
+
+jobs:
+  task:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: List Repo Workflows
+        uses: octokit/request-action@v2.x
+        with:
+          route: GET /repos/${{ github.repository }}/actions/workflows
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
